@@ -31,8 +31,8 @@ while True:
     cv2.polylines(img, int_corners, True, (0, 255, 0), 5)
 
     # Aruco Perimeter
-    # aruco_perimeter = cv2.arcLength(int_corners[0], True)
-    aruco_perimeter = 580
+    aruco_perimeter = cv2.arcLength(int_corners[0], True)
+    # aruco_perimeter = 580
 
     # Pixel to centimeter ratio
     pixel_to_cm_ratio=aruco_perimeter/20
