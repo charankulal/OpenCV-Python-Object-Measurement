@@ -1,6 +1,5 @@
 import cv2
 
-
 class HomogeneousBgDetector():
     def __init__(self):
         pass

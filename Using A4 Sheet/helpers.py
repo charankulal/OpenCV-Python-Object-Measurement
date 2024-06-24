@@ -51,11 +51,15 @@ def reorder_points(points):
     return new_points
 
 
-def warp_image(img, points, w, h):
+def warp_image(img, points, w, h, padding=20):
     points = reorder_points(points)
     point_1 = np.float32(points)
     point_2 = np.float32([[0, 0], [w, 0], [0, h], [w, h]])
     matrix = cv2.getPerspectiveTransform(point_1, point_2)
     img_warp = cv2.warpPerspective(img, matrix, (w, h))
-
+    img_warp = img_warp[padding:img_warp.shape[0] -
+                        padding, padding:img_warp.shape[1]-padding]
     return img_warp
+
+def find_distance(points_1, points_2):
+    return ((points_2[0]-points_1[0])**2 + (points_2[1]-points_1[1])**2)**0.5

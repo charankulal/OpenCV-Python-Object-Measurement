@@ -12,7 +12,7 @@ aruco_dict = cv2.aruco.getPredefinedDictionary(cv2.aruco.DICT_5X5_50)
 detector = HomogeneousBgDetector()
 
 # Load the Cap
-cap= cv2.VideoCapture('http://192.168.90.106:8080/video')
+cap= cv2.VideoCapture('http://100.70.206.220:8080/video')
 cap.set(cv2.CAP_PROP_FRAME_WIDTH,1280)
 cap.set(cv2.CAP_PROP_FRAME_HEIGHT,720)
 
